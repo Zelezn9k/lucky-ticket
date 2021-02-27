@@ -16,14 +16,6 @@ namespace LT
             {
                 int leftNumber = 0;
                 int rightNumber = 0;
-                if(ch.Length == 5 && ch.Length==7)
-                {
-                    for(int i = 0; i <= ch.Length; i++)
-                    {
-                        ch[i] = ch[i + 1];
-                    }
-                    ch[0] = (char)0;
-                }
                 for (int i = 0; i < ch.Length; i++)
                 {
                     if (i < ch.Length/2)
