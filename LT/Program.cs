@@ -43,9 +43,9 @@ namespace LT
                 }
                 Console.ReadKey();
                 Console.Clear();
-                Console.WriteLine("Если желаете выйти нажмите  Y ");
-                Console.WriteLine("Если желаете продолжить нажмите любую другую кнопку ");
-            } while (Console.ReadLine() != "Y");
+                Console.WriteLine("Если желаете выйти нажмите  0 ");
+                Console.WriteLine("Если желаете продолжить нажмите любую другую кнопку ");              
+            } while (Console.ReadLine() != "0");
         }
     }
 }
