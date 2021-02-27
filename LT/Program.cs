@@ -1,0 +1,50 @@
+﻿using System;
+using System.Linq;
+
+namespace LT
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите номер трамвайного билета:  ");
+            string str = Console.ReadLine();
+            char[] ch = new char[str.Length];
+            ch = str.ToCharArray();
+            int[] ticketNumber = ch.Select(s => int.Parse(s.ToString())).ToArray();
+            if (ch.Length>3 && ch.Length<9)
+            {
+                int leftNumber = 0;
+                int rightNumber = 0;
+                if(ch.Length == 5 && ch.Length==7)
+                {
+                    for(int i = 0; i <= ch.Length; i++)
+                    {
+                        ch[i] = ch[i + 1];
+                    }
+                    ch[0] = (char)0;
+                }
+                for (int i = 0; i < ch.Length; i++)
+                {
+                    if (i < ch.Length/2)
+                    {
+                        leftNumber += ticketNumber[i];
+                    }
+
+                    else rightNumber += ticketNumber[i];
+                }
+
+                if (leftNumber == rightNumber)
+                {
+                    Console.WriteLine("У вас счастливый билет: {0} = {1}", leftNumber, rightNumber);
+                }
+
+                else Console.WriteLine("У вас не счастливый билет: {0} != {1}", leftNumber, rightNumber);
+            }
+
+            else Console.WriteLine("Число введено не правильно!");
+
+            Console.Read();
+        }
+    }
+}
